@@ -1,5 +1,15 @@
+import Header from './components/Header/Header';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+
 const AnimajinApp: React.FC = () => {
-	return <h1 className='text-red-500'>Test Animajin</h1>;
+	return (
+		<>
+			<Header />
+			<SignUp />
+			<SignIn />
+		</>
+	);
 };
 
 export default AnimajinApp;
