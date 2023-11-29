@@ -1,13 +1,22 @@
+import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
+import { routes } from './routes/routes';
 
 const AnimajinApp: React.FC = () => {
 	return (
 		<>
 			<Header />
-			<SignUp />
-			<SignIn />
+			<Routes>
+				{routes &&
+					routes.map((route) => {
+						return (
+							<Route
+								path={route.path}
+								element={<route.Page />}
+							/>
+						);
+					})}
+			</Routes>
 		</>
 	);
 };

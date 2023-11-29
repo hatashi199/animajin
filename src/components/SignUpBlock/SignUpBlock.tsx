@@ -1,32 +1,41 @@
+import { useState } from 'react';
 import Button from '../Button/Button';
+import Input from '../Input/Input';
 
 const SignUpBlock: React.FC = () => {
+	const [email, setEmail] = useState<string>('');
+	const [password, setPassword] = useState<string>('');
+
 	return (
 		<div className='flex flex-col gap-[60px] items-center p-[40px] rounded-boxRounded bg-white'>
 			<h2>Sign up to Animajin</h2>
 			<form className='flex flex-col gap-[25px] items-center'>
-				<input
+				<Input
 					type='email'
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
 					placeholder='Email'
 					className='w-full bg-input rounded-boxRounded leading-[40px] px-[15px]'
 				/>
-				<input
+				<Input
 					type='text'
 					placeholder='Username'
 					className='w-full bg-input rounded-boxRounded leading-[40px] px-[15px]'
 				/>
-				<input
+				<Input
 					type='password'
+					value={password}
+					onChange={(e) => setPassword(e.target.value)}
 					placeholder='Password'
 					className='w-full bg-input rounded-boxRounded leading-[40px] px-[15px]'
 				/>
-				<input
+				<Input
 					type='password'
 					placeholder='Confirm Password'
 					className='w-full bg-input rounded-boxRounded leading-[40px] px-[15px]'
 				/>
 				<label className='flex gap-[10px] items-center'>
-					<input
+					<Input
 						type='checkbox'
 						id='checkbox'
 						name='checkbox'
