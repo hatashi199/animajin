@@ -11,6 +11,7 @@ const AnimajinApp: React.FC = () => {
 					routes.map((route) => {
 						return (
 							<Route
+								key={route.label}
 								path={route.path}
 								element={<route.Page />}
 							/>
